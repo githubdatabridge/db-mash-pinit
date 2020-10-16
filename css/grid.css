@@ -1,0 +1,26 @@
+.icons > span {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.icons > span:hover{
+    color: #337ab7;
+}
+
+.icons > span.fa-trash-o:hover{
+    color: red;
+}
+
+
+.icons {
+    text-align: right;
+    color: darkgray;
+    width:100%;
+    padding: 10px;
+}
+
+div[gridster] .icons {
+    z-index:3;
+    position: absolute;
+}
+

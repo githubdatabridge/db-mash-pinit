@@ -1,0 +1,151 @@
+.dashboard-selection-dropdown {
+    min-width: 350px;
+}
+
+.dropdown-menu .row {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    white-space: nowrap;
+}
+
+div.row > div.dashboard-name {
+    width: 100%;
+}
+
+div.row > div.icon-container {
+    text-align: right;
+}
+
+div.row > div.creation-date {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 0;
+    color: darkgrey;
+}
+
+div.row > div.new-dashboard {
+    width: 100%;
+}
+
+.dropdown-menu .row > div{
+    padding: 3px 15px;
+}
+
+.dashboard-selection-dropdown .row:hover {
+    background: #f5f5f5;
+}
+
+.dashboard-selection-dropdown .row.active {
+    background: #dcedf4;
+}
+
+.dropdown-menu .fa-trash-o:hover,
+.dropdown-menu .fa-eraser:hover{
+    color: red;
+    cursor: pointer;
+}
+
+.dropdown-menu .fa-check:hover {
+    color: #337ab7;
+}
+
+.dropdown-menu .fa-check {
+    margin-right: 5px;
+}
+
+/**
+ * Add styles for dropdown-submenu since functionality was removed in Bootstrap 3.0
+ */
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+    margin-left:-1px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+    display:block;
+}
+.dropdown-submenu:hover>a:after {
+    border-left-color:#ffffff;
+}
+.dropdown-submenu.pull-left {
+    float:none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left:-100%;
+    margin-left:10px;
+}
+
+.dynamic-dropdown {
+    font-family: "QlikView Sans";
+    padding: 20px 15px;
+    max-height: calc(100vh - 100px);
+    max-width: calc(100vw - 360px);
+}
+
+.dynamic-dropdown > div.wrapper {
+    display: flex;
+}
+
+.dynamic-dropdown > div.wrapper div.row {
+    white-space: nowrap;
+    min-width: 180px;
+}
+
+.dynamic-dropdown > div.wrapper > div.selection-container:not(:first-child) {
+    border-left: 1px solid #CCCCCC;
+    padding-left: 15px;
+}
+
+.dynamic-dropdown > div.wrapper > div.selection-container:not(:last-child) {
+    margin-right: 15px;
+}
+
+
+.dynamic-dropdown .app-name-container {
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.dynamic-dropdown .app-name {
+    font-size: 18px;
+}
+
+.dynamic-dropdown .field{
+    margin-top: 10px;
+}
+
+.dynamic-dropdown .field-name-container {
+    display: flex;
+}
+
+.dynamic-dropdown .field div.field-name {
+    font-weight: bolder;
+}
+
+.dynamic-dropdown .field div.value, .dynamic-dropdown .field div.info {
+    margin-left: 10px;
+    margin-bottom: 3px;
+    white-space: pre-line;
+}
+
+.dynamic-dropdown .info {
+    font-style: italic;
+}
+
+.dynamic-dropdown .row > div.dynamic-width {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.dynamic-dropdown .row > div.icon-container {
+    width: 30px;
+    padding-left: 0;
+    text-align: right;
+}

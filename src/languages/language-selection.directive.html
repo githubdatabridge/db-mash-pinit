@@ -1,0 +1,13 @@
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownLanguage" data-toggle="dropdown">
+        <span>{{$ctrl.currentLanguage | uppercase}}</span>
+        <span class="caret"></span>
+    </button>
+    <div class="dropdown-menu container-fluid" aria-labelledby="dropdownLanguage">
+        <div ng-repeat="language in $ctrl.languages" class="row" ng-class="{active:$ctrl.currentLanguage === language}">
+            <div class="col-md-12" ng-click="$ctrl.changeLanguage(language)">
+                {{language | uppercase}}
+            </div>
+        </div>
+    </div>
+</div>

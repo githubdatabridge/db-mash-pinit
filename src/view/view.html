@@ -1,0 +1,9 @@
+<div class="full-screen">
+    <div class="icons">
+        <span class="fa fa-info-circle fa-lg" uib-tooltip="{{appName}}" tooltip-placement="left"></span>
+        <span class="fa fa-share fa-lg" uib-tooltip="{{'Open app containing this qlik view.' | translate}}" tooltip-placement="left" ng-click="openApp()"></span>
+        <span class="fa fa-trash-o fa-lg" uib-tooltip="{{'Unpin item' | translate}}" tooltip-placement="left" ng-click="unpinItem()"></span>
+        <span class="lui-icon lui-icon--collapse zoom" ng-click="openMain()"></span>
+    </div>
+    <div qv-placeholder="view" style="height: calc(100% - 100px)"></div>
+</div>

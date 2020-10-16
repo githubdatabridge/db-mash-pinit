@@ -1,0 +1,24 @@
+/* Used for the current selection filter menu,
+   since the clear icon is not the last child in the .btn-group
+   due to the dropdown
+   and would therefore have no border radius */
+.btn-group > button:last-of-type {
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+}
+
+current-selection button.btn {
+    background-color: #5EA819;
+    color: white;
+    border: 1px white solid;
+}
+
+current-selection button.btn:hover,
+current-selection button.btn:focus {
+    background-color: #4e9809;
+    color: white;
+}
+
+button.btn.pull-right {
+    margin-left: 10px;
+}

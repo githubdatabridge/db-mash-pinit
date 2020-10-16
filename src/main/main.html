@@ -1,0 +1,20 @@
+<div gridster="gridsterOpts">
+    <ul>
+        <li gridster-item row="tile.y" col="tile.x" ng-repeat="tile in tiles">
+            <div ng-if="!tile.app" class="mos greyed {{tile.tileClass}} dragger"></div>
+            <div class="background" ng-if="!!tile.app"></div>
+            <div class="icons show-on-parent-hover" ng-if="!!tile.app">
+                <span class="fa fa-info-circle fa-lg" uib-tooltip="{{tile.appName}}" tooltip-placement="left"></span>
+                <span class="fa fa-share fa-lg" uib-tooltip="{{'Open app containing this qlik view.' | translate}}" tooltip-placement="left"
+                    ng-click="openApp(tile)"></span>
+                <span class="dragger fa fa-hand-rock-o fa-lg" uib-tooltip="{{'Drag to move the tile' | translate}}" tooltip-placement="left"></span>
+                <span class="fa fa-trash-o fa-lg" uib-tooltip="{{'Unpin item' | translate}}" tooltip-placement="left" ng-click="unpinItem(tile)"></span>
+                <span class="lui-icon lui-icon--expand zoom" ng-click="openView(tile.app, tile.id)"></span>
+            </div>
+            <div class="viz" ng-if="!!tile.app && gridLoaded">
+                <div class="tile" qv-placeholder="tile"></div>
+                <div class="foot" ng-style="{color:fontColor}"></div>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title" translate>Delete dashboard?</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form name="dashboard" class="form-horizontal" ng-submit="$ctrl.ok()">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>
+                    <span translate>You are about to delete dashboard</span>
+                    <strong>'{{$ctrl.name}}'</strong>
+                </h4>
+            </div>
+            <div class="col-sm-12">
+                <h4 translate>This cannot be undone. Please confirm!</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-danger pull-right" type="button" translate>Delete</button>
+                <button class="btn btn-default pull-right" type="button" ng-click="$ctrl.cancel()" translate>Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

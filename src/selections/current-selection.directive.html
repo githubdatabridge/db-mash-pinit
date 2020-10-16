@@ -1,0 +1,39 @@
+<div class="btn-group">
+    <button class="btn" type="button" id="currentSelectionDropdown"
+            data-toggle="dropdown">
+        <span translate>Current Selection</span>
+        <span class="caret"></span>
+    </button>
+    <button type="button" class="btn" ng-click="$ctrl.clearAllSelections()"
+            uib-tooltip="{{'Clear all selections' | translate}}" tooltip-placement="bottom"><span
+        class="fa fa-times-circle"></span></button>
+    <div  ng-click="$ctrl.preventDropdownClosing($event)" class="dropdown-menu container-fluid dynamic-dropdown pre-scrollable" aria-labelledby="currentSelectionDropdown">
+        <div class="wrapper">
+            <div class="selection-container" ng-repeat="selection in $ctrl.selections | filter: $ctrl.hasFields">
+                <div class="row app-name-container">
+                    <div class="dynamic-width app-name col-md-11" uib-tooltip="{{selection.appName}}" tooltip-if-truncated tooltip-placement="bottom" tooltip-enable="false">{{selection.appName}}</div>
+                    <div class="icon-container col-md-1">
+                        <span ng-click="$ctrl.clearApp(selection.appId)" class="fa fa-eraser"></span>
+                    </div>
+                </div>
+                <div class="field" ng-repeat="field in selection.fields">
+                    <div class="row field-name-container">
+                        <div class="field-name dynamic-width col-md-11" uib-tooltip="{{field.name}}" tooltip-if-truncated tooltip-enable="false">{{field.name}}</div>
+                        <div class="icon-container col-md-1">
+                            <span ng-click="$ctrl.clearField(selection.appId, field.name)" class="fa fa-eraser"></span>
+                        </div>
+                    </div>
+                    <div class="row" ng-repeat="value in field.values">
+                        <div class="value col-md-12">{{value}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="value col-md-12" ng-if="field.isMoreThanThreshold && !field.isAllSelected">...</div>
+                    </div>
+                    <div class="row">
+                        <div class="info col-md-12" ng-if="field.isAllSelected" translate>All values selected</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

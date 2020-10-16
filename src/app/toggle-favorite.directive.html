@@ -1,0 +1,6 @@
+<div tooltip-enable="$ctrl.disabled()" class="tooltip-wrapper" tooltip-placement="left"
+    uib-tooltip="{{'The dashboard is already full. No additional objects can be added.' | translate}}">
+    <button type="button" ng-click="$ctrl.toggleFavorite()" ng-disabled="$ctrl.disabled()" class="btn btn-link">
+        <span ng-class="{'fa fa-2x': true, 'fa-star': $ctrl.isFavorite, 'fa-star-o': !$ctrl.isFavorite}"></span>
+    </button>
+</div>

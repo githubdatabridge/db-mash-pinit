@@ -1,0 +1,34 @@
+.btn.btn-link > .fa-star, .btn.btn-link > .fa-star-o {
+    color: #FFCC11;
+}
+
+.btn.btn-link[disabled] > .fa-star-o {
+    color: #E0DFDB;
+}
+
+toggle-favorite {
+    float: right;
+}
+
+.slide {
+    height: 100%;
+    background-color: white;
+    border-left: 1px #e7e7e7 solid;
+    padding: 20px;
+}
+
+.ui-carousel {
+    margin-top: 20px;
+}
+
+.ui-carousel,
+.carousel-wrapper,
+.track,
+.track-wrapper {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+    position: relative;
+}

@@ -1,0 +1,35 @@
+<div class="selections-panel">
+    <iframe ng-src="{{sel}}" width="100%" height="100%" frameBorder="0"></iframe>
+</div>
+<div class="noMob head qlikF">
+    <div><img class="appTb" src="{{app.thumb}}"></div>
+    <div class="appName">
+        <div style="margin-top: 7px;">
+            <a class="appLink" target="blank" href="{{app.appURL}}">{{app.appTitle}}</a>
+            <div class="appdesc ">
+                <div class="summary">{{app.appDesc}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<no-visualizations ng-if="!hasQlikEntities()"></no-visualizations>
+<div class="qlikEntities" style="margin-left:50px;margin-right:50px" ng-if="hasQlikEntities()">
+    <div class="filters">
+        <i ng-class="{'filterExist':hasSelection}" ng-click="toggleSelectionsPanel()"
+           class="pull-left sidebtnL fa fa-circle"></i>
+    </div>
+    <div class="row central qlikF carou">
+        <ui-carousel slides="qlikEntities" style="height: 100%" slides-to-show="3" slides-to-scroll="3" on-init="onCarouselInit()"
+                     on-after-change="onCarouselAfterChange(currentSlide)"
+                     infinite="false" dots="true">
+            <carousel-item class="mask">
+                <div class="obdesc" title="{{item.footnote}}">{{item.footnote}}</div>
+                <toggle-favorite item="item"></toggle-favorite>
+                <div class="preview" qv-carousel="item" index="$index"></div>
+            </carousel-item>
+        </ui-carousel>
+    </div>
+    <hr>
+</div>

@@ -1,0 +1,543 @@
+@import url('~bootstrap/dist/css/bootstrap.min.css');
+@import url('~bootstrap-tour/build/css/bootstrap-tour.css');
+@import url('~font-awesome/css/font-awesome.css');
+@import url('~angular-ui-carousel/dist/ui-carousel.css');
+@import url('~angular-gridster/dist/angular-gridster.min.css');
+@import url('../css/my.css');
+@import url('../css/tooltip.css');
+@import url("navigation.css");
+@import url("dropdown.css");
+@import url("carousel.css");
+@import url("button.css");
+@import url("grid.css");
+
+html, body {
+    overflow: hidden !important;
+    height: 100%;
+}
+
+* {
+    outline: none !important;
+}
+
+.one.ng-enter {
+    animation: fadeIn 1s both ease-in;
+    z-index: 8888;
+}
+
+.one.ng-leave {
+    animation: fadeOut 0.5s both ease-in;
+    z-index: 9999;
+}
+
+.two.ng-enter {
+    animation: fadeIn 1s both ease-in;
+    z-index: 8888;
+}
+
+.two.ng-leave {
+    animation: fadeOut 0.5s both ease-in;
+    z-index: 9999;
+}
+
+.ng-enter .selections-panel {
+    display: none;
+}
+
+.ng-leave .selections-panel {
+    display: none;
+}
+
+.qlikEntities {
+    height: 100%;
+}
+
+@keyframes rotateFall {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+        animation-timing-function: ease-out;
+    }
+    40% {
+        transform: rotateZ(17deg);
+    }
+    60% {
+        transform: rotateZ(16deg);
+    }
+    100% {
+        transform: translateY(100%) rotateZ(17deg);
+    }
+}
+
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* rotate out newspaper */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* rotate out newspaper */
+@keyframes rotateOutNewspaper {
+    to {
+        transform: translateZ(-3000px) rotateZ(360deg);
+        opacity: 0;
+    }
+}
+
+/* entering animations --------------------------------------- */
+/* scale up */
+@keyframes scaleUp {
+    from {
+        opacity: 0.3;
+        -webkit-transform: scale(0.8);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* slide in from the bottom */
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+nav.navbar-static-top {
+    z-index: none;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.dropdown {
+    cursor: pointer;
+}
+
+.foot {
+    display: none;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    /*top: 2px;*/
+    font-style: italic;
+    color: white;
+    margin-left: 5px;
+}
+
+.viz {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    padding-left: 5px;
+}
+
+.qlikF {
+    font-family: "QlikView Sans", sans-serif;
+}
+
+.tile {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 4px;
+    padding-top: 44px;
+}
+
+.background {
+    height: inherit;
+    width: 100%;
+    background-color: #ffffff;
+    opacity: 0.7;
+    position: absolute;
+}
+
+.ico {
+    font-family: 'QlikView Icons';
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    color: rgb(255, 255, 255)
+}
+
+.infoico {
+    display: inline;
+    font-size: 22px !important
+}
+
+.ico:hover {
+    color: rgba(2, 2, 2, 0.6);
+    cursor: pointer;
+}
+
+.infoico:before {
+    content: "]";
+    cursor: pointer;
+}
+
+.obdesc {
+    font-style: italic;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: default;
+    top: 0px;
+    width: 100%;
+    height: 20px;
+}
+
+.appdesc {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 60%;
+}
+
+.summary {
+    font-size: smaller;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.sidebtnL {
+    margin-left: -15px;
+}
+.filterExist {
+    color: coral;
+}
+
+.filters {
+    color: #545352;
+    height: 0px;
+    width: 100%;
+    margin-left: -50px;
+    font-size: xx-large;
+    cursor: pointer;
+    opacity: 0.8;
+    position: absolute;
+    top: 200px;
+    z-index: 2000;
+}
+
+.appTb {
+    margin: 10px;
+    margin-left: 35px;
+    width: 190px;
+    height: 116px;
+    border: 2px solid #ffffff;
+    background: #ffffff;
+    -webkit-border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 3px;
+    -moz-background-clip: padding;
+    border-radius: 3px;
+    background-clip: padding-box;
+}
+
+.head {
+    display: flex;
+    height: 135px;
+    background-color: #595959;
+}
+
+.selections-panel {
+    height: calc(100% - 50px);
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    margin-top: -2px;
+    left: -100%;
+}
+
+.bx-ctrl {
+    font-size: 38px;
+    width: calc(100% + 50px);
+    cursor: pointer;
+    margin-left: -40px;
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+}
+
+.greyed {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.appThumb {
+    position: absolute;
+    opacity: 0.4;
+    margin: -20px;
+}
+
+.centered, .centered > div {
+    float: none;
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+}
+
+.btm {
+    margin-top: 0px;
+}
+
+.central {
+    height: calc(100% - 240px);
+}
+
+.mask {
+    background-color: rgba(2, 75, 125, 0.93);
+    height: 100%
+}
+
+.layout {
+    height: 100%;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+.slider {
+    height: 100%;
+}
+
+.preview {
+    z-index: 31;
+    height: calc(100% - 100px);
+    width: 100%;
+}
+
+.preview header {
+    height: 100px;
+}
+
+.preview .qv-object-content-container {
+    height: calc(100% - 100px);
+}
+
+.mos {
+    height: 100%;
+}
+
+.logo img {
+    height: 45px;
+    margin-top: -12px;
+
+}
+
+.back {
+    top: 0px;
+    height: 100%;
+    opacity: 0.2;
+    position: absolute;
+    width: 100%;
+    margin-left: -15px;
+}
+
+.powergas {
+    background: url(../img/1.jpg) 0 0/cover no-repeat;
+}
+
+.light {
+    background: url(../img/2.jpg) 0 0/cover no-repeat;
+}
+
+.avia {
+    background: url(../img/3.jpg) 0 0/cover no-repeat;
+}
+
+.wind {
+    background: url(../img/4.jpg) 0 0/cover no-repeat;
+}
+
+.health {
+    background: url(../img/5.jpg) 0 0/cover no-repeat;
+}
+
+.soft {
+    background: url(../img/6.jpg) 0 0/cover no-repeat;
+}
+
+.oil {
+    background: url(../img/7.jpg) 0 0/cover no-repeat;
+}
+
+.globa {
+    background: url(../img/8.jpg) 0 0/cover no-repeat;
+}
+
+.trans {
+    background: url(../img/9.jpg) 0 0/cover no-repeat;
+}
+
+.qv-object-footnote {
+    display: none;
+}
+
+@media screen and  (min-width: 768px) {
+    .navbar-nav > li > .dropdown-menu.dm {
+
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+@media screen and  (max-width: 768px) {
+    .helpl {
+        display: none !important;
+    }
+
+    .appdesc {
+        width: calc(100% - 20px);
+    }
+
+}
+
+@media screen and (max-width: 667px) {
+    html, body {
+        overflow-y: auto !important;
+    }
+
+    .noMob {
+        display: none !important;
+    }
+
+    .carou {
+        height: calc(100% - 130px);
+    }
+
+    .objectin {
+        display: none;
+    }
+}
+
+@media screen and  (max-height: 377px) {
+    .objectin {
+        display: none;
+    }
+
+    .noMob {
+        display: none !important;
+    }
+
+    .carou {
+        height: calc(100% - 130px);
+    }
+
+}
+
+.dropdown-menu.dm > li > a:hover, .dropdown-menu.dm > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #019ddd;
+}
+
+.dropdown-menu.dm {
+
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, .175);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, .175);
+}
+
+.appLink:hover {
+    margin-left: 10px;
+    color: white;
+}
+
+.appLink:visited {
+    margin-left: 10px;
+    color: white;
+}
+
+.appLink {
+    margin-left: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.appName {
+    margin: 0 0 10px 10px;
+}
+
+.show-on-parent-hover {
+    visibility: hidden;
+}
+
+*:hover > .show-on-parent-hover {
+    visibility: visible;
+}
+
+.ng-view {
+    height: 100%;
+}
+
+.ng-view.scrollable {
+    overflow-y: scroll;
+}
+
+div.full-screen {
+    padding: 20px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+div.well.no-visualizations {
+    margin: 20px 35px;
+    background-color: white;
+    border-radius: 0;
+}
