@@ -8,7 +8,7 @@ An AngularJS Qlik extension, prototyped by [Qlik](https://www.qlik.com), forked 
 
 - [Pre-requisites for contributors](#pre-requisites-for-contributors)
 - [How to run PinIt locally](#how-to-run-pinit-locally)
-- [How to run PinIt on the KW Qlik Sense Server](#how-to-run-pinit-on-the-kw-qlik-sense-server)
+- [How to run PinIt on the  Qlik Sense Server](#how-to-run-pinit-on-the-qlik-sense-server)
 - [Qlik resources](#qlik-resources)
 - [APIs and JS libraries](#apis-and-js-libraries)
 - [Contacts](#contacts)
@@ -26,28 +26,20 @@ An AngularJS Qlik extension, prototyped by [Qlik](https://www.qlik.com), forked 
 
 - Before building, run `npm install`, this downloads npm dependencies into `node_modules\`
 - To **build**:
-  - run `npm run build`, this lets webpack processes sources and resources into a `dist\` folder and packages the extension as `dist-zip\axpinme.zip`
+  - run `npm run build`, this lets webpack processes sources and resources into a `dist\` folder and packages the extension as `dist-zip\XXX.zip`
   - alternatively run `npm run watch`, this lets webpack actively watch changes to sources and resources, and update `dist\` and `dist-zip\` on-the-fly
-- To run with your own Qlik Desktop instance, simply add a symbolic link `axpinme` in `~\Documents\Qlik\Sense\Extensions` pointing to your `dist` folder, e.g. with Powershell:
-  - run as Administrator: `New-Item -Path ~\Documents\Qlik\Sense\Extensions\axpinme -ItemType SymbolicLink -Value <cloned-git-repo>\dist\`
 - Run and log into your Qlik Sense Desktop, then:
   - ensure some Apps in Qlik Sense Desktop have the `PinIt` keyword at the start of their description - see `PINIT.appKeyWord` value defined in [settings.js](./settings.js)
   - ensure some Visualizations Master Items used by these Apps have the `PinIt` tag at the start of their description - see `PINIT.appKeyWord` value defined in [settings.js](./settings.js)
-  - browse to <http://localhost:4848/extensions/axpinme/index.html>, alternatively you can start the Dev Hub from the Qlik Sense Desktop, or directly hitting <http://localhost:4848/dev-hub>, then right-click and "view" the PinMe mashup
+  - browse to <http://localhost:4848/extensions/axpinme/index.html>
 
-## How to run PinIt on the KW Qlik Sense Server
+## How to run PinIt on the Qlik Sense Server
 
 - To **build** the extension, run `npm run prod`
 - To **deploy** the extension on our Qlik Sense Server:
-  - Connect to the [Qlik Management Console](https://your-qlik-server/qmc/) with your K&W Software active directory account (e.g. KWSOFT1\pga)
-  - Under `Manage Resources` / `Extensions`, click `Import`, then select the built `dist-zip\axpinme.zip`
+  - Connect to the [Qlik Management Console](https://your-qlik-server/qmc/) and import the extension
+  - Under `Manage Resources` / `Extensions`, click `Import`, then select the built `dist-zip\XXX.zip`
     - NOTE: if the extension already exists, you must delete it first; be warned: it takes a while, a green confirmation messages comes after a while, no indication of any task in progress
-
-- K&W **Qlik Sense Server** is <https://your-qlik-server.xx> (with chrome you don't need to add your credentials)
-  - Qlik Management Console: <https://your-qlik-server.xx/qmc/>
-  - DevHub: <https://your-qlik-server.xx/dev-hub/mashup-editor/#qext{axpinme}>
-  - to test the **Pin Your business** extension: <https://your-qlik-server.xx/extensions/axpinme/index.html>
-
 
 ## Qlik resources
 
